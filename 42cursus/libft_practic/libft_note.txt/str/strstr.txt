@@ -1,0 +1,5 @@
+strstr 文字列の検索
+char *strstr(const char *haystack, const char *needle);
+
+strcasestr
+char *strcasestr(const char *haystack, const char *needle);

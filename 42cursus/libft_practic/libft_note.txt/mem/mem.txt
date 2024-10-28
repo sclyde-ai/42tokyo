@@ -1,0 +1,25 @@
+memset メモリsを文字cでnバイト埋める
+void *memset(void *s, int c, size_t n);
+returnはs、unsigne charに変換して保存
+
+memcpy destメモリにsrcメモリをnバイトコピー
+void *memcpy(void *dest, const void *src, size_t n);
+returnはdest、overlapに対応していない
+
+memmove overlapに対応したmemcpy
+void *memmove(void *dest, const void *src, size_t n);
+returnはdest、src > destでoverlapしてる場合後からコピー
+case1: dest < src 前から 
+case2: src < dest 後から
+
+memchr 
+void *memchr(const void *s, int c, size_t n);
+存在しない場合null、
+
+memrchr
+void *memrchr(const void *s, int c, size_t n);
+
+rawmemchr 
+void *rawmemchr(const void *s, int c);
+
+

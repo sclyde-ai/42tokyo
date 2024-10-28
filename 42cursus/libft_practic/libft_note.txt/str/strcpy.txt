@@ -1,0 +1,23 @@
+strcpy destにsrcをコピー
+char *strcpy(char *dest, const char *src);
+dest > srcを仮定、nullあり、Beware of buffer overruns!
+
+strncpy 
+char *strncpy(char *dest, const char *src, size_t n);
+n > src: null終端しない、n < src nullで埋める
+char *
+strncpy(char *dest, const char *src, size_t n)
+{
+    size_t i;
+
+    for (i = 0; i < n && src[i] != '\0'; i++)
+        dest[i] = src[i];
+    for ( ; i < n; i++)
+        dest[i] = '\0';
+
+    return dest;
+}
+
+strlcpy 
+size_t  strlcpy(char  *dest,  const  char *src, size_t size);
+null終端、returnはsrc

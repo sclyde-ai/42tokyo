@@ -1,0 +1,11 @@
+strchr 文字検索
+char *strchr(const char *s, int c);
+存在しない場合null、cが'\0'ならsのnull終端のポインタを返す
+
+strrchr
+char *strrchr(const char *s, int c);
+存在しない場合null、cが'\0'ならsのnull終端のポインタ（つまりs）を返す
+
+strchrnul
+char *strchrnul(const char *s, int c);
+存在しない場合sのnull終端のポインタを返すq

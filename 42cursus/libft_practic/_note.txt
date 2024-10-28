@@ -1,0 +1,16 @@
+size_t = unsigned long long = long long unsigned int 
+
+strlシリーズ sizeはdestのbuffer　
+
+
+
+
+
+
+
+
+
+
+
+
+

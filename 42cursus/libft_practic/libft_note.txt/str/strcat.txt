@@ -1,0 +1,27 @@
+strcat destの後にsrcを追加
+char *strcat(char *dest, const char *src);
+必ずnull終端、
+
+strncat
+char *strncat(char *dest, const char *src, size_t n);
+必ずnull終端、出力の長さはstrlen(dest)+n+1
+char *
+strncat(char *dest, const char *src, size_t n)
+{
+    size_t dest_len = strlen(dest);
+    size_t i;
+
+    for (i = 0 ; i < n && src[i] != '\0' ; i++)
+        dest[dest_len + i] = src[i];
+    dest[dest_len + i] = '\0';
+
+    return dest;
+}
+
+strlcat
+size_t strlcat(char  *dest,  const  char  *src, size_t size);
+必ずnull終端、returnは作りたい文字列の長さ
+size はdestのbuffer
+case1: dest + src < size: dest+src 正常
+case2: dest + src >= size: dest+src 
+case3: dest >= size: size+src destのnull終端の位置がわからず危険

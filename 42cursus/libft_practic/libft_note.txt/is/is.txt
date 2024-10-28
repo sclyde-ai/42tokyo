@@ -1,0 +1,6 @@
+isalpha 97 < 122
+isdigit 48 < 57
+isalnum isalpha || isdigit
+isascii 0 < 127
+isprint 32 < 126
+isspace 9 < 13 and 32
