@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 21:15:03 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:25:25 by sclyde           ###   ########.fr       */
+/*   Created: 2024/11/07 21:19:49 by sclyde            #+#    #+#             */
+/*   Updated: 2024/11/08 10:55:48 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	dlen;
-	size_t	slen;
+	char	*p;
+	char	*start;
+	int		b;
 	size_t	i;
 
-	dlen = ft_strlen(dest);
-	slen = ft_strlen(src);
-	i = 0;
-	if (dlen >= size)
-		return (size + slen);
-	else if (dlen + slen >= size)
+	p = (char *)malloc(ft_strlen(s1) + 1);
+	if (p == NULL)
+		return (NULL);
+	start = p;
+	while (*s1)
 	{
-		while (i++ < size - dlen - 1)
-			dest[dlen + i - 1] = src[i - 1];
-		dest[size - 1] = '\0';
+		i = 0;
+		b = 0;
+		while (i < ft_strlen(set))
+		{
+			if (*s1 == set[i])
+				b = 1;
+			i++;
+		}
+		if (b)
+			s1++;
+		else
+			*p++ = *s1++;
 	}
-	else
-	{
-		while (i++ < slen)
-			dest[dlen + i - 1] = src[i - 1];
-		dest[dlen + slen] = '\0';
-	}
-	return (dlen + slen);
+	*p++ = '\0';
+	return (start);
 }

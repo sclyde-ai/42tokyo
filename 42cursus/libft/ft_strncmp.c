@@ -1,19 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/07 21:14:33 by sclyde            #+#    #+#             */
+/*   Updated: 2024/11/07 21:14:34 by sclyde           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    char *p1;
-    char *p2;
-
-    p1 = (char *)s1;
-    p2 = (char *)s2;
-
-    while((*p1 || *p2) && n--)
-    {
-        if(*p1 != *p2)
-        {
-            return *p2 - *p1;
-        }
-    }
-    return 0;
+	while (n--)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (0);
 }

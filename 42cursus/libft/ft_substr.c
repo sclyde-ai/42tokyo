@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 21:15:03 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:25:25 by sclyde           ###   ########.fr       */
+/*   Created: 2024/11/07 20:37:48 by sclyde            #+#    #+#             */
+/*   Updated: 2024/11/07 20:37:49 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	dlen;
-	size_t	slen;
+	char	*sub;
 	size_t	i;
 
-	dlen = ft_strlen(dest);
-	slen = ft_strlen(src);
+	sub = (char *)malloc(len + 1);
+	if (sub == NULL)
+		return (NULL);
 	i = 0;
-	if (dlen >= size)
-		return (size + slen);
-	else if (dlen + slen >= size)
+	while (i < len)
 	{
-		while (i++ < size - dlen - 1)
-			dest[dlen + i - 1] = src[i - 1];
-		dest[size - 1] = '\0';
+		sub[i] = s[i + start];
+		i++;
 	}
-	else
-	{
-		while (i++ < slen)
-			dest[dlen + i - 1] = src[i - 1];
-		dest[dlen + slen] = '\0';
-	}
-	return (dlen + slen);
+	sub[len] = '\0';
+	return (sub);
 }

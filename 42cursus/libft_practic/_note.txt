@@ -2,8 +2,12 @@ size_t = unsigned long long = long long unsigned int
 
 strlシリーズ sizeはdestのbuffer　
 
+mallocしたらNULLかどうかを必ず確認
 
-
+compile error
+1. ft_ 忘れ
+2. makefile srcs=忘れ
+3. libft プロトタイプ宣言忘れ
 
 
 

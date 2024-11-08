@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmap1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:39:14 by sclyde            #+#    #+#             */
-/*   Updated: 2024/10/31 22:18:08 by sclyde           ###   ########.fr       */
+/*   Created: 2024/11/07 21:14:44 by sclyde            #+#    #+#             */
+/*   Updated: 2024/11/08 11:05:52 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+char	*ft_strmap1(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	l;
+	char *p;
+	char *t;
+	size_t l;
+	unsigned int i;
 
-	l = 0;
-	while (*c++)
-		l++;
-	return (l);
+	l = ft_strlen(s);
+	p = malloc(sizeof(char *) * (l + 1));
+	t = p;
+	while (*s)
+		*p++ = f(i++, *s++);
+	return t;
 }

@@ -1,0 +1,14 @@
+strdup 文字列を複製
+char *strdup(const char *s);
+returnはmallocしたポインタ、s==NULLまたはmallocがNULLのときreturnはNULL
+
+strndup
+char *strndup(const char *s, size_t n);
+
+
+strdupa
+char *strdupa(const char *s);
+
+
+strndupa
+char *strndupa(const char *s, size_t n);
