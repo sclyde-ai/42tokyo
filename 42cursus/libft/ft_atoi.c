@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:19:00 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:19:01 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 12:14:50 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	a;
+	int	ans;
 	int	sign;
 
-	a = 0;
+	ans = 0;
 	sign = 1;
 	while (ft_isspace(*nptr))
 		nptr++;
@@ -30,11 +30,11 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	while (*nptr && ft_isdigit(*nptr))
 	{
-		a *= 10;
-		a -= *nptr - 48;
+		ans *= 10;
+		ans -= *nptr - 48;
 		nptr++;
 	}
-	return (a * sign * -1);
+	return (ans * sign * -1);
 }
 
 // #include <stdio.h>

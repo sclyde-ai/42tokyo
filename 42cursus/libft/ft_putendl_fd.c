@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 21:18:47 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/09 12:51:40 by sclyde           ###   ########.fr       */
+/*   Created: 2024/11/09 12:31:00 by sclyde            #+#    #+#             */
+/*   Updated: 2024/11/09 12:37:03 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void ft_putendl_fd(char *s, int fd)
 {
-	return ((ft_isalpha(c) || ft_isdigit(c)));
+    if(s == NULL)
+        return;
+    while(*s)
+        write(fd, s++, 1);
+    write(fd, "\n", 1);
 }

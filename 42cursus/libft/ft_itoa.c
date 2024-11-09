@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:18:18 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:18:19 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 12:18:01 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 char	*ft_itoa_reverse(size_t n)
 {
-	char	*temp;
+	char	*p;
 	size_t	i;
 
-	temp = malloc(11 * sizeof(char));
-	if (temp == NULL)
+	p = malloc(11 * sizeof(char));
+	if (p == NULL)
 		return (NULL);
 	i = 0;
 	while (n > 0)
 	{
-		temp[i] = n % 10 + 48;
+		p[i] = n % 10 + 48;
 		n /= 10;
 		i++;
 	}
 	while (i < 10)
 	{
-		temp[i] = '\0';
+		p[i] = '\0';
 		i++;
 	}
-	return (temp);
+	return (p);
 }
 
 char	*ft_reverse(char *s)
@@ -58,32 +58,32 @@ char	*ft_reverse(char *s)
 char	*ft_itoa(int n)
 {
 	char		*rev;
-	char		*a;
+	char		*p;
 	int			sign;
-	long int	t;
+	long int	long_n;
 
-	t = n;
-	if (t == 0)
+	long_n = n;
+	if (long_n == 0)
 	{
-		a = malloc(sizeof(char *));
-		*a = '0';
-		return (a);
+		p = malloc(sizeof(char *));
+		*p = '0';
+		return (p);
 	}
 	sign = 0;
-	if (t < 0)
+	if (long_n < 0)
 	{
-		t *= -1;
+		long_n *= -1;
 		sign = 1;
 	}
-	rev = ft_itoa_reverse(t);
+	rev = ft_itoa_reverse(long_n);
 	if (sign)
 	{
 		rev[ft_strlen(rev)] = '-';
 		rev[ft_strlen(rev) + 1] = '\0';
 	}
-	a = ft_reverse(rev);
+	p = ft_reverse(rev);
 	free(rev);
-	return (a);
+	return (p);
 }
 
 // #include <stdio.h>
