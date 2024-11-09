@@ -17,8 +17,8 @@ int	ft_atoi(const char *nptr)
 	int	ans;
 	int	sign;
 
-	if(nptr == NULL)
-		return 0;
+	if (nptr == NULL)
+		return (0);
 	ans = 0;
 	sign = 1;
 	while (ft_isspace(*nptr))

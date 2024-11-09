@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *p;
-	size_t bytes;
+	void	*p;
+	size_t	bytes;
 
 	bytes = nmemb * size;
 	if (nmemb == 0 || size == 0)

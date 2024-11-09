@@ -14,15 +14,15 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char *s1_;
-	unsigned char *s2_;
+	unsigned char	*s1_;
+	unsigned char	*s2_;
 
 	s1_ = (unsigned char *)s1;
 	s2_ = (unsigned char *)s2;
 	while (n-- > 0)
 	{
 		if (*s1_ != *s2_)
-			return((int)(*s1_ - *s2_));
+			return ((int)(*s1_ - *s2_));
 		s1_++;
 		s2_++;
 	}
@@ -50,6 +50,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 //     else
 //         printf("The functions returned different results.\n");
 
-//     return 0;
+//     return (0);
 // }
-
