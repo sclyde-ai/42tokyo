@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:14:22 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:14:23 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 15:26:55 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*ans;
 
+	if(s == NULL)
+		return (NULL);
 	ans = NULL;
 	while (*s)
 	{

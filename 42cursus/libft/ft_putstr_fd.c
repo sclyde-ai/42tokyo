@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:31:11 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/09 12:31:12 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 15:04:38 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
+    if(s == NULL)
+        return;
     while(*s)
         write(fd, s++, 1);
 }

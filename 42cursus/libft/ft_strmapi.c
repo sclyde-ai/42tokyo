@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:14:44 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/08 16:24:12 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 15:09:27 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	l;
 	unsigned int	i;
 
+	if(s == NULL || f == NULL)
+		return NULL;
 	l = ft_strlen(s);
 	p = malloc(sizeof(char *) * (l + 1));
 	if(p == NULL)

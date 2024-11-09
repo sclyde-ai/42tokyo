@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:18:18 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/09 12:18:01 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 14:52:18 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	int			sign;
 	long int	long_n;
 
-	long_n = n;
+	long_n = (long int)n;
 	if (long_n == 0)
 	{
 		p = malloc(sizeof(char *));

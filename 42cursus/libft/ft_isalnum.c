@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:18:47 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/09 12:51:40 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 14:49:04 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	return ((ft_isalpha(c) || ft_isdigit(c)));
+	if((ft_isalpha(c) || ft_isdigit(c)))
+		return (1);
+	return (0);
 }

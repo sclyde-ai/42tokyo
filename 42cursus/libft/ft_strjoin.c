@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:15:44 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/07 21:15:45 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 15:07:12 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*p;
 	size_t	i;
 
+	if(s1 == NULL || s2 == NULL)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	p = (char *)malloc(len1 + len2 + 1);

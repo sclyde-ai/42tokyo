@@ -6,7 +6,7 @@
 /*   By: sclyde <sclyde@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:19:00 by sclyde            #+#    #+#             */
-/*   Updated: 2024/11/09 12:14:50 by sclyde           ###   ########.fr       */
+/*   Updated: 2024/11/09 14:40:47 by sclyde           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *nptr)
 	int	ans;
 	int	sign;
 
+	if(nptr == NULL)
+		return 0;
 	ans = 0;
 	sign = 1;
 	while (ft_isspace(*nptr))
